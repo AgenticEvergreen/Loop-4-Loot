@@ -86,7 +86,7 @@ A1 is a **refining** axis, not a gate.
 
 This axis is about **placement and clarity**, not quality of the idea. A great idea on an unclear seam is still hard to ride safely, because you cannot reason about its blast radius.
 
-### The four seam VALUES
+### The five seam VALUES
 
 > These are the **values A2 can take** — they are **not** the four scoring axes. Pick the single value that best describes where the candidate lives.
 
@@ -96,6 +96,7 @@ This axis is about **placement and clarity**, not quality of the idea. A great i
 | **`context`** | **AGENTS.md-class** | Instruction & context conventions the agent reads — the durable, file-based guidance layer. | An `AGENTS.md`-style convention; a standardized instructions/memory file the loop loads each turn. |
 | **`runtime`** | **agent-loop / Goose-class** | The agent loop itself — the runtime that drives plan→act→observe→repeat. | A Goose-style agent runtime; an orchestration loop; a step executor. |
 | **`gateway`** | **agentgateway-class** | The control-plane / proxy seam — routing, policy, auth, observability between agents and the outside world. | An agentgateway-style proxy; a model/tool gateway enforcing policy and routing. |
+| **`tool-adjunct`** *(v1.1)* | a wrapped tool | Not a seam-native component — a data source / CLI / desktop app you *wrap into* a seam (usually `protocol`) via a thin adapter you author. Score by how cleanly it wraps. | A no-code scraper, a CLI utility, a desktop automation app — useful capability exposed *through* a wrapper, not occupying a seam itself. |
 
 A candidate's seam value is **descriptive**: `A2 = runtime`, `A2 = protocol`, etc. The GREEN/AMBER/RED grade then measures *how cleanly it occupies that single seam*.
 

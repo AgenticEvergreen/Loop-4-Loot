@@ -179,7 +179,7 @@ Score by whether the candidate *reinforces* that spine.
 
 **Question:** **Which seam** of the agent stack does this sit on?
 
-The seam axis has **four category values** — record the **one** the candidate occupies:
+The seam axis has **five values** — four agent-stack seams plus one for *wrapped* tools — record the **one** the candidate occupies:
 
 | Value | Class | What sits here |
 |---|---|---|
@@ -187,6 +187,7 @@ The seam axis has **four category values** — record the **one** the candidate 
 | **context** | AGENTS.md-class | Instruction-file / context conventions that steer the agent |
 | **runtime** | Goose-class | The agent loop / execution runtime itself |
 | **gateway** | agentgateway-class | The traffic / policy / routing layer in front of models or tools |
+| **tool-adjunct** | *(v1.1)* | A data source / CLI / desktop app that you *wrap into* a seam (usually `protocol`, via a thin adapter) rather than a seam-native component. The integration work lives in *your* wrapper, not the tool. |
 
 Score by how cleanly the candidate fits a single seam.
 

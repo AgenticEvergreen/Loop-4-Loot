@@ -64,7 +64,7 @@ Look for the things a good harness needs: iteration caps, verify-then-terminate,
 → **GREEN** = strengthens the harness · **AMBER** = neutral / partial · **RED** = pure surface or weakens the loop.
 
 #### A2 — SEAM
-**Which seam of the agent stack does it sit on?** The seam axis has **four category VALUES** — record the **one** the candidate occupies:
+**Which seam of the agent stack does it sit on?** The seam axis has **five values** — four agent-stack seams, plus one for tools that get *wrapped into* a seam — record the **one** the candidate occupies:
 
 | Seam value | Class |
 |---|---|
@@ -72,10 +72,11 @@ Look for the things a good harness needs: iteration caps, verify-then-terminate,
 | `context` | AGENTS.md-class |
 | `runtime` | agent-loop / Goose-class |
 | `gateway` | agentgateway-class |
+| `tool-adjunct` | a data source / CLI / desktop app that is *wrapped into* a seam (usually `protocol`) rather than occupying one natively |
 
-→ **GREEN** = clean single-seam fit · **AMBER/RED** = sprawling across seams or unclear which seam it owns.
+→ **GREEN** = clean single-seam fit · **AMBER/RED** = sprawling across seams or unclear which seam it owns. A `tool-adjunct` scores on how cleanly it can be *wrapped* (a sharp CLI/API = GREEN; a sprawling do-everything app = AMBER/RED).
 
-> **Note:** these four — MCP, AGENTS.md, runtime, gateway — are the **values of the A2-Seam axis only**. They are **not** the four axes. Don't confuse the seam categories with the scoring axes.
+> **Note:** these values — MCP, AGENTS.md, runtime, gateway, plus tool-adjunct — are the **values of the A2-Seam axis only**. They are **not** the four scoring axes. (The four well-known AAIF projects map to the first four seams; `tool-adjunct` was added in **v1.1** for the common case of a high-value OSS *tool* you wrap rather than a seam-native component.)
 
 #### A3 — SOVEREIGNTY  *(the hard gate)*
 Does adopting it **preserve your wall** — secrets, control plane, trust boundary, exit path — or create lock-in and cede the gate?
